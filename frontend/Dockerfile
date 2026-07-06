@@ -12,7 +12,7 @@ RUN npm run build
 
 #--------production--------
 
-FROM nginx:27-alpine AS production 
+FROM nginx:1.27-alpine AS production 
 
 RUN rm -rf /etc/nginx/con.f/default.conf /usr/share/nginx/html/*
 
