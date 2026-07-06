@@ -309,7 +309,7 @@ spec:
         - name: frontend
           image: ghcr.io/iam-veeramalla/Jerney/jerney-frontend:75da1da
           ports:
-            - containerPort: 8080
+            - containerPort: 80
               protocol: TCP
           resources:
             requests:
@@ -329,13 +329,13 @@ spec:
           livenessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 80
             initialDelaySeconds: 5
             periodSeconds: 10
           readinessProbe:
             httpGet:
               path: /
-              port: 8080
+              port: 80
             initialDelaySeconds: 3
             periodSeconds: 5
 
@@ -359,7 +359,7 @@ spec:
     app.kubernetes.io/name: jerney-frontend
   ports:
     - port: 80
-      targetPort: 8080
+      targetPort: 80
       protocol: TCP
 
 ---
